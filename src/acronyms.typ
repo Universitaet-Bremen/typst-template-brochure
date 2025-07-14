@@ -11,3 +11,4 @@
   ),
   // Add more terms
 )
+// If the list is empty, the document will not have the acronyms section

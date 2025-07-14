@@ -186,8 +186,8 @@
 
 #let acronyms = [
   #if acronyms.entry-list.len() > 0 {
-    [= Abkürzungsverzeichnis]
-    
+    [= Abkürzungen]
+
     print-glossary(acronyms.entry-list)
     pagebreak()
   }
