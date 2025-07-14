@@ -1,5 +1,6 @@
 #import "src/conf.typ": *
 #import "src/modules.typ" as uni
+#import "@preview/glossarium:0.5.7": gls, glspl
 // ALLE MODULE AUFRUFBAR ÜBER #uni.MODULNAME()
 
 = Kapitelüberschrift
@@ -19,7 +20,7 @@ Dies ist ein normaler Text des Dokuments. #lorem(100)
 
 #uni.box(
   [
-    *Beispielbox*\
+    *Beispielbox #gls("iot")*\
     Beispielhafte Box mit _Italic-Test-Inhalt_
   ]
 )

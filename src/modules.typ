@@ -1,5 +1,7 @@
 #import "conf.typ": *
 #import "themes.typ" as theme
+#import "acronyms.typ" as acronyms
+#import "@preview/glossarium:0.5.7": print-glossary
 
 #let color = {
   if (colortheme == "red") {theme.uniCorporateThemes.red}
@@ -180,6 +182,15 @@
   #set text(top-edge: 1em)
   #outline(title: "Inhalt", depth: 4)
   #pagebreak()
+]
+
+#let acronyms = [
+  #if acronyms.entry-list.len() > 0 {
+    [= Abkürzungsverzeichnis]
+    
+    print-glossary(acronyms.entry-list)
+    pagebreak()
+  }
 ]
 
 #let bib = [
