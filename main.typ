@@ -8,7 +8,12 @@
 
 #import "src/conf.typ": *
 #import "src/modules.typ" as uni
+#import "src/acronyms.typ" as acronyms
+#import "@preview/glossarium:0.5.7": register-glossary, make-glossary
 
+#show: make-glossary
+
+#register-glossary(acronyms.entry-list)
 
 #set document(
   author: author.name,
@@ -52,6 +57,8 @@
   #lorem(100)
 ]
 #uni.tableOfContents
+
+#uni.acronyms
 
 #counter(page).update(1)
 #set page(footer: uni.pageFooter(numbers: true), numbering: "1")
