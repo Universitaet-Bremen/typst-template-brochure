@@ -19,7 +19,8 @@
   summary: "Hausarbeit von xxx",
   dateOfCreation: datetime(year: 2025, month: 08, day: 01), // = Abgabedatum
   description: "",
-  keywords: ()
+  keywords: (),
+  citation-style: "institute-of-electrical-and-electronics-engineers", // https://typst.app/docs/reference/model/bibliography/#parameters-style
 )
 
 #let study = (

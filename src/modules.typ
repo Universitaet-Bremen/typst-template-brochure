@@ -196,7 +196,7 @@
 #let bib = [
   #set par(justify: false)
   #show bibliography: set heading(outlined: true);
-  #bibliography(title: [Bibliographie],full: true,"sources.bib", style: "institute-of-electrical-and-electronics-engineers")
+  #bibliography(title: [Bibliographie],full: true,"sources.bib", style: doc.citation-style)
 ]
 
 #let lastPage = [
