@@ -1,7 +1,7 @@
 #import "conf.typ": *
 #import "themes.typ" as theme
 #import "acronyms.typ" as acronyms
-#import "@preview/glossarium:0.5.7": print-glossary
+#import "@preview/glossarium:0.5.9": print-glossary
 
 #let color = {
   if (colortheme == "red") {theme.uniCorporateThemes.red}
@@ -54,8 +54,13 @@
     margin: 0cm,
     fill: color.dark
   )
-  set par(first-line-indent: 0pt)
+  set par(first-line-indent: 0pt, justify: false)
   set align(center)
+  set text(
+    font: "Sharp Sans",
+    lang: "de",
+    size: 8.5pt,
+  )
 
   grid(
     columns: (2fr, 10fr, 10fr),
@@ -84,7 +89,7 @@
             #preheading
           ]
           
-          #text(24pt, weight: "bold", color.dark.darken(50%))[
+          #text(24pt, weight: "bold", color.dark.darken(50%), hyphenate: false)[
             #title
           ]
           #line(length: 100%, stroke: color.dark)
@@ -131,7 +136,12 @@
   @author Jannis Wiehart
 */
 #let pageHeader(title: doc.title) = context {
-  set text(lang: "de")
+  set text(
+    font: "Sharp Sans",
+    lang: "de",
+    size: 8.5pt,
+  )
+  set par(justify: false)
   text(8pt)[
       #grid(
         columns: (2fr, 3fr, 2fr),
@@ -146,8 +156,10 @@
           ]
         ],
         align(right + top)[
-          #smallcaps[#text([#doc.dateOfCreation.day(). #translated-month(long: true, doc.dateOfCreation) #doc.dateOfCreation.year()])]
-        ]
+          #smallcaps[#text(
+            [#doc.dateOfCreation.day(). #translated-month(long: true, doc.dateOfCreation) #doc.dateOfCreation.year()],
+          )]
+        ],
       )
     ]
   line(length: 100%, stroke: 0.5pt + color.dark)
@@ -160,6 +172,12 @@
   @author Jannis Wiehart
 */
 #let pageFooter(caption: doc.identifier, numbers: false) = context {
+  set text(
+    font: "Sharp Sans",
+    lang: "de",
+    size: 8.5pt,
+  )
+
   line(length: 100%, stroke: 0.5pt + color.dark)
   text(8pt)[
     #grid(
@@ -178,29 +196,33 @@
 
 
 #let tableOfContents = [
-  #pagebreak()
   #set text(top-edge: 1em)
   #outline(title: "Inhalt", depth: 4)
-  #pagebreak()
 ]
 
 #let acronyms = [
   #if acronyms.entry-list.len() > 0 {
+    set heading(numbering: none)
     [= Abkürzungen]
 
-    print-glossary(acronyms.entry-list)
+    print-glossary(acronyms.entry-list, deduplicate-back-references: true)
     pagebreak()
   }
 ]
 
 #let bib = [
+  = Bibliographie
   #set par(justify: false)
-  #show bibliography: set heading(outlined: true);
-  #bibliography(title: [Bibliographie],full: true,"sources.bib", style: doc.citation-style)
+  #bibliography(title: none, full: true, "sources.bib", style: doc.citation-style)
 ]
 
 #let lastPage = [
   #pagebreak()
+  #set text(
+    font: "Sharp Sans",
+    lang: "de",
+    size: 8.5pt,
+  )
   #set page(footer: none, header: none, margin: 0pt)
   #grid(
     rows: (50fr,1fr, 1fr),

@@ -9,7 +9,7 @@
 #import "src/conf.typ": *
 #import "src/modules.typ" as uni
 #import "src/acronyms.typ" as acronyms
-#import "@preview/glossarium:0.5.7": register-glossary, make-glossary
+#import "@preview/glossarium:0.5.9": make-glossary, register-glossary
 
 #show: make-glossary
 
@@ -30,12 +30,17 @@
 )
 
 #set text(
-  font: "Sharp Sans",
+  font: doc.font,
   lang: "de",
-  size: 8.5pt
+  size: doc.font-size,
+  top-edge: doc.line-spacing * 1em,
 )
 
-#set par(linebreaks: "optimized")
+#set heading(
+  numbering: "1.",
+)
+
+#set par(linebreaks: "optimized", justify: true)
 // Kapitel-Headline
 #show heading.where(level: 1): it => [
   #uni.h1(it)
@@ -56,9 +61,16 @@
 #uni.abstract[
   #lorem(100)
 ]
-#uni.tableOfContents
+
+#pagebreak()
 
 #uni.acronyms
+
+#uni.tableOfContents
+
+#pagebreak()
+
+<roman-number-interrupt>
 
 #counter(page).update(1)
 #set page(footer: uni.pageFooter(numbers: true), numbering: "1")
@@ -69,7 +81,14 @@
 
 #pagebreak()
 #set page(numbering: "I")
-#counter(page).update(1)
+#context [
+  #let number = counter(page).at(<roman-number-interrupt>).at(0)
+  #counter(page).update(number)
+]
 #include "anhaenge.typ"
+
+#set page(footer: none, header: none, margin: 0pt)
+
+// Declarations
 
 #uni.lastPage

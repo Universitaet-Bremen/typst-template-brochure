@@ -1,6 +1,6 @@
 #import "src/conf.typ": *
 #import "src/modules.typ" as uni
-#import "@preview/glossarium:0.5.7": gls, glspl
+#import "@preview/glossarium:0.5.9": gls, glspl
 // ALLE MODULE AUFRUFBAR ÜBER #uni.MODULNAME()
 
 = Kapitelüberschrift

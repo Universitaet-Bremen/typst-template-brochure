@@ -8,11 +8,11 @@
   name: "Jannis L. Wiehart",
   matrikelnummer: "6374047",
   email: "wiehart@uni-bremen.de",
-  fachsemester: 2
+  fachsemester: 2,
 )
 
 #let doc = (
-  title: "{TITLE}", 
+  title: "{TITLE}",
   identifier: "{unique_identifier}", // Steht in den Meta-Informationen und in der Fußzeile
   preheading: "Hausarbeit zum Thema",
   forschungsfrage: "{FORSCHUNGSFRAGE}",
@@ -20,6 +20,9 @@
   dateOfCreation: datetime(year: 2025, month: 08, day: 01), // = Abgabedatum
   description: "",
   keywords: (),
+  font: "Palatino Linotype",
+  font-size: 12pt,
+  line-spacing: 1.1,
   citation-style: "institute-of-electrical-and-electronics-engineers", // https://typst.app/docs/reference/model/bibliography/#parameters-style
 )
 
@@ -28,7 +31,7 @@
   semester: "WSxx/xx",
   modul: "MODULNAME",
   dozenten: "DOZENT1, DOZENT2",
-  fachbereich: "Fachbereich: FB03"
+  fachbereich: "Fachbereich: FB03",
 )
 
 
