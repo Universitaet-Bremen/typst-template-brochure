@@ -32,8 +32,8 @@
 #set text(
   font: doc.font,
   lang: "de",
-  size: doc.font-size,
-  top-edge: doc.line-spacing * 1em,
+  size: doc.fontSize,
+  top-edge: doc.lineSpacing * 1em,
 )
 
 #set heading(

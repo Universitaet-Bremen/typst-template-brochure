@@ -21,9 +21,9 @@
   description: "",
   keywords: (),
   font: "Palatino Linotype",
-  font-size: 12pt,
-  line-spacing: 1.1,
-  citation-style: "institute-of-electrical-and-electronics-engineers", // https://typst.app/docs/reference/model/bibliography/#parameters-style
+  fontSize: 12pt,
+  lineSpacing: 1.1,
+  citationStyle: "institute-of-electrical-and-electronics-engineers", // https://typst.app/docs/reference/model/bibliography/#parameters-style
 )
 
 #let study = (

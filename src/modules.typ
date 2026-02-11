@@ -213,7 +213,7 @@
 #let bib = [
   = Bibliographie
   #set par(justify: false)
-  #bibliography(title: none, full: true, "sources.bib", style: doc.citation-style)
+  #bibliography(title: none, full: true, "sources.bib", style: doc.citationStyle)
 ]
 
 #let lastPage = [
