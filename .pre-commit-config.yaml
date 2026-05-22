@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/typstyle-rs/pre-commit-typstyle
+    rev: v0.14.4
+    hooks:
+      - id: typstyle
+        name: Typstyle Check
+
+  - repo: local
+    hooks:
+      - id: typst-compile
+        name: Typst Compile Check
+        language: system
+        entry: typst compile main.typ --root .
+        pass_filenames: false
+        types_or: [file]
+        files: \.typ$
