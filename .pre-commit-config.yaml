@@ -10,7 +10,7 @@ repos:
       - id: typst-compile
         name: Typst Compile Check
         language: system
-        entry: typst compile main.typ --root .
+        entry: typst compile lib.typ --root .
         pass_filenames: false
         types_or: [file]
         files: \.typ$

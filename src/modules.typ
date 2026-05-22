@@ -207,7 +207,7 @@
 
   @author Jannis Wiehart
 */
-#let pageFooter(caption: "Wer das liest ist dumm", numbers: false) = context {
+#let pageFooter(caption: none, numbers: false) = context {
   set text(
     font: "Sharp Sans",
     lang: "de",

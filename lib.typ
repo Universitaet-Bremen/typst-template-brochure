@@ -103,7 +103,7 @@
   counter(page).update(1)
   set page(
     header: uni.pageHeader(doc, study),
-    footer: uni.pageFooter(),
+    footer: uni.pageFooter(caption: doc.identifier),
     numbering: "I",
   )
   uni.abstract(abstract)
@@ -117,7 +117,10 @@
 
   context { _roman-page.update(counter(page).get().at(0)) }
   counter(page).update(1)
-  set page(footer: uni.pageFooter(numbers: true), numbering: "1")
+  set page(
+    footer: uni.pageFooter(caption: doc.identifier, numbers: true),
+    numbering: "1",
+  )
 
   body
 
