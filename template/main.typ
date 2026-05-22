@@ -40,6 +40,7 @@
 
   abstract: include "abstract.typ",
   anhaenge: include "anhaenge.typ",
+  bib: (title: none, full: none, style: none, sources) => bibliography(title: title, full: full, style: style, sources),
 )
 
 #include "content.typ"

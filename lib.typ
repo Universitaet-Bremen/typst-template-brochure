@@ -41,6 +41,7 @@
   abstract: [],
   sources: "sources.bib",
   anhaenge: [],
+  bib: (title: none, full: none, style: none, sources) => {},
   body,
 ) = context {
   theme.color.update({
@@ -122,8 +123,7 @@
 
   pagebreak()
 
-  uni.bib(doc, sources)
-
+  uni.bib(bib(title: none, full: true, sources, style: doc.citationStyle))
   pagebreak()
   set page(numbering: "I")
   context { counter(page).update(_roman-page.get()) }
