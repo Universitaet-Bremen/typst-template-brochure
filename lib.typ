@@ -95,6 +95,7 @@
   uni.coverSheet(
     title: doc.title,
     forschungsfrage: doc.forschungsfrage,
+    abgabedatum: [#doc.dateOfCreation.day(). #uni.translated-month(long: true, doc.dateOfCreation) #doc.dateOfCreation.year()],
     preheading: doc.preheading,
     study,
     author,
