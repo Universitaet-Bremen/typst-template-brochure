@@ -39,9 +39,8 @@
   ),
   acronym-list: (),
   abstract: [],
-  sources: "sources.bib",
+  sources: none,
   anhaenge: [],
-  bib: (title: none, full: none, style: none, sources) => {},
   body,
 ) = context {
   theme.color.update({
@@ -126,7 +125,7 @@
 
   pagebreak()
 
-  uni.bib(bib(title: none, full: true, sources, style: doc.citationStyle))
+  uni.bib(sources, doc.citationStyle)
   pagebreak()
   set page(numbering: "I")
   context { counter(page).update(_roman-page.get()) }

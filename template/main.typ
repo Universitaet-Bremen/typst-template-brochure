@@ -39,13 +39,8 @@
   acronym-list: entry-list,
 
   abstract: include "abstract.typ",
+  sources: path("sources.bib"),
   anhaenge: include "anhaenge.typ",
-  bib: (title: none, full: none, style: none, sources) => bibliography(
-    title: title,
-    full: full,
-    style: style,
-    sources,
-  ),
 )
 
 #include "content.typ"
