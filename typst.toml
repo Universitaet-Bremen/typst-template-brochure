@@ -1,0 +1,15 @@
+[package]
+name = "moin-uni-brochure"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Jannis Wiehart <@janniswiehart>"]
+license = "MIT"
+description = "Hausarbeits-Vorlage für die Universität Bremen"
+repository = "https://github.com/Universitaet-Bremen/typst-template-brochure"
+keywords = ["theme", "ub", "brochure", "assignment", "thesis", "paper", "Bremen", "HB", "Universität", "Uni"]
+categories = ["report", "paper", "thesis"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
