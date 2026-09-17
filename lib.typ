@@ -83,7 +83,20 @@
     top-edge: doc.lineSpacing * 1em,
   )
 
-  set heading(numbering: "1.")
+  set heading(
+    numbering: "1.",
+    supplement: heading => {
+      let depth = counter(heading.func()).at(heading.location()).len()
+
+      if depth == 1 {
+        "Kapitel"
+      } else if depth == 2 {
+        "Abschnitt"
+      } else {
+        "Unterabschnitt"
+      }
+    },
+  )
   set par(linebreaks: "optimized", justify: true)
 
   show heading.where(level: 1): it => uni.h1(it)
