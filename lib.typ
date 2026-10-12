@@ -72,7 +72,7 @@
 
   set page(
     paper: "a4",
-    margin: (top: 3cm, x: 2cm, bottom: 2cm),
+    margin: (top: 4cm, x: 3cm, bottom: 3cm),
     supplement: "Seite",
   )
 

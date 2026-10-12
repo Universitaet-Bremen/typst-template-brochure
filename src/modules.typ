@@ -180,7 +180,7 @@
   set par(justify: false)
   text(8pt)[
     #grid(
-      columns: (2fr, 3fr, 2fr),
+      columns: (2fr, 4fr, 2fr),
       align(left + top)[
         #image("images/unibremen_logo.png", width: 60%)
       ],
